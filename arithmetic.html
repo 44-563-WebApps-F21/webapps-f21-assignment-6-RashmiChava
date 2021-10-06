@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Arithmetic Computation</title>
+    </head>
+    
+<body>
+
+<h2>Rashmi Chava computes</h2>
+
+<form>
+    <label for="form1_base">Enter a base</label>
+    <input type ="number" id="form1_base" name="form1_base" value=10> <br>
+
+    <label for="form1_exponent">Enter an exponent</label>
+    <input type ="number" id="form1_exponent" name="form1_exponent" value=2> <br>
+
+    <input type="button" onclick="powers()" value="Compute">
+</form>
+
+<p id="resultValue">Computed Values will displays here</p>
+
+<script> 
+
+function powers(){
+    console.log("Getting form values")
+    base = document.getElementById("form1_base").value
+    exponent = document.getElementById("form1_exponent").value
+    var result = "";
+    for(var i=1;i<=exponent;i++){
+        result +=  Math.pow(base,i) + " ";
+    }
+    out = document.getElementById("resultValue")
+    out.innerHTML = "Powers of "+ base + " are:" + result;
+}
+</script>
+
+</body>
+</html> 
