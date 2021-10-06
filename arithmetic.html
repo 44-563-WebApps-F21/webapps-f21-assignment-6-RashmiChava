@@ -18,7 +18,24 @@
     <input type="button" onclick="powers()" value="Compute">
 </form>
 
-<p id="resultValue">Computed Values will displays here</p>
+<p id="resultValue">Base and Exponent Values will displays here</p>
+
+<form>
+    <input type="radio" id="rg1_plus" name="Operation" value="plus" onclick="processRadio()">  
+    <label for="rg1_plus">+</label></br>
+  
+    <input type="radio" id="rg1_minus" name="Operation" value="minus" onclick="processRadio()">
+    <label for="rg1_blue">-</label></br>
+  
+    <input type="radio" id="rg1_times" name="Operation" value="times" onclick="processRadio()">
+    <label for="rg1_times">*</label></br>
+
+    <input type="radio" id="rg1_divide" name="Operation" value="divide" onclick="processRadio()">
+    <label for="rg1_divide">/</label></br>
+
+</form>
+
+<p id="radioButtonResult">Calculated Values will display here</p>
 
 <script> 
 
@@ -32,6 +49,25 @@ function powers(){
     }
     out = document.getElementById("resultValue")
     out.innerHTML = "Powers of "+ base + " are:" + result;
+}
+
+function processRadio() {
+    base = document.getElementById("form1_base").value
+    exponent = document.getElementById("form1_exponent").value
+    plus = document.getElementById("rg1_plus").checked
+    minus = document.getElementById("rg1_minus").checked
+    times = document.getElementById("rg1_times").checked
+    divide = document.getElementById("rg1_divide").checked
+    result = document.getElementById("radioButtonResult")
+
+    if (plus)
+    result.innerHTML = +base + +exponent
+    else if (minus)
+    result.innerHTML = base - exponent
+    else if (times)
+    result.innerHTML = base * exponent
+    else
+    result.innerHTML = base / exponent
 }
 </script>
 
