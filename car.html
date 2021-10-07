@@ -26,41 +26,34 @@
 
 <form>
     <label for="form1_property">Enter a property</label>
-    <input type ="text" id="property" name="form1_property" value="color"> <br>
+    <input type ="text" id="property_name" name="form1_property" value="color"> <br>
 
     <label for="form1_value">Enter a value</label>
-    <input type ="text" id="value" name="form1_value" autofocus> <br>
+    <input type ="text" id="property_value" name="form1_value" autofocus> <br>
 
     <input type="button" onclick="updateCar()" value="Update the car">
 </form>
 
 <script> 
 
-my_car = {}
-
-function orderCar(){
-    console.log("Getting form values")
+let my_car = {}
+function orderCar (){
     my_car = {}
-    first = document.getElementById("cb1_electric").checked
-    second = document.getElementById("cb1_ac").checked
-    third = document.getElementById("cb1_gps").checked
+    value1 = document.getElementById("cb1_electric").checked
+    value2 = document.getElementById("cb1_ac").checked
+    value3 = document.getElementById("cb1_gps").checked
     out = document.getElementById("result")
-    first? my_car["electric"] = true : my_car["electric"] = false
-    second? my_car["ac"] = true : my_car["ac"] = false
-    third? my_car["gps"] = true : my_car["gps"] = false
-    my_car = JSON.stringify(my_car)
-    out.innerHTML = my_car
-    my_car = JSON.parse(my_car)
+
+    my_car = {electric: value1, ac: value2, gps: value3}
+    console.log(my_car)
+    out.innerHTML = JSON.stringify(my_car)
 }
 
 function updateCar(){
-    prop = document.getElementById("form1_property").value
-    val = document.getElementById("form1_value").value
-    out = document.getElementById("result")
-    my_car[prop] = val
-    my_car = JSON.stringify(my_car)
-    out.innerHTML = my_car
-    my_car = JSON.parse(my_car)
+    property_name = document.getElementById("property_name").value
+    property_value = document.getElementById("property_value").value
+    my_car[property_name] = property_value
+    document.getElementById("result").innerHTML = JSON.stringify(my_car)
 }
 
 </script>
