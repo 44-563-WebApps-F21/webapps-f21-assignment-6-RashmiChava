@@ -44,23 +44,25 @@ if(sphrase == phrase){
 }
 
 let usingImage = 1
-    function newImage(img) {
-        debugger;
-        switch (usingImage) {
-            case 1:
-                document.getElementById("Images").src = "Images/Hamster.JPG"
-                usingImage++;
-                break;
-            case 2:
-                document.getElementById("Images").src = "Images/African Bush Elephant.jpg"
-                usingImage++;
-                break;
-            default:
-                usingImage = 1;
-                document.getElementById("Images").src = "Images/vampire Bat.jpg"
-                break;
-        }
+
+function newImage() {
+
+    switch (usingImage) {
+        case 1:
+            document.getElementById("Images").src = "Images/Hamster.jpg"
+            usingImage++;
+             break;
+        case 2:
+            document.getElementById("Images").src = "Images/African Bush Elephant.jpg"
+            usingImage++;
+            break;
+        default:
+            usingImage = 1;
+            document.getElementById("Images").src = "Images/vampire Bat.jpg"
+            break;
     }
+}
+
 </script>
 
 <div class="container">
